@@ -6,9 +6,10 @@ require('dotenv').config();
 const InputError = require('../exception/InputError');
 
 (async () => {
+    const port = process.env.PORT || 8080;
     const server = Hapi.server({
-        port: 8080,
-        host: 'localhost',
+        port: port,
+        host: '0.0.0.0',
         routes: {
             cors: {
                 origin: ['*']
