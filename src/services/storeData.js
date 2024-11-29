@@ -3,7 +3,7 @@ const { Firestore } = require('@google-cloud/firestore');
 async function storeData(id, data) {
     try {
         const db = new Firestore();
-        const predictCollection = db.collection('prediction');
+        const predictCollection = db.collection('predictions');
         await predictCollection.doc(id).set(data);
         console.log('Data berhasil disimpan ke Firestore.');
     } catch (error) {
